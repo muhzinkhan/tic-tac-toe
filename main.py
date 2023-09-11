@@ -1,99 +1,46 @@
 import numpy as np
-
-grid_data = np.repeat(None, 9).reshape(3, 3)
-keys = {
-    "tl": (0, 0),
-    "tm": (0, 1),
-    "tr": (0, 2),
-    "lm": (1, 0),
-    "m": (1, 1),
-    "rm": (1, 2),
-    "ml": (2, 0),
-    "bm": (2, 1),
-    "br": (2, 2),
-}
-art = ""
-grid = """
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |              
-                |               |
-_______________________________________________
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-_______________________________________________
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-                |               |
-
-"""
-X = """
-        ?8888P
-         `88'
-    8b,_  88  _,d8
-    88888SEAL88888
-    8P~   88   ~?8
-         ,88.
-        d8888b
-"""
-
-Y = """
-       ____
-     ,' __ `.
-    | ,'  `. |
-    | | () | |
-    \ `.__,' /
-     `.____,`
-"""
-
-s = """
-⭕❕⭕❕❌
-➖➕➖➕➖
-⭕❕❌❕⭕
-➖➕➖➕➖
-❌❕❌❕⭕ 
-"""
+from graphics import art, move_x, move_o, grid_original, make_grid, how_to_grid_data
 
 
 
-def show_grid():
-    print(grid)
+
+
+def show_grid(grid_data):
+    temp_grid = make_grid(grid_data)
+    print(temp_grid)
 
 
 def intro():
     print(art)
 
+
 def how_to_play():
-    show_grid()
-    print("\n\nOla!")
+    print("\n\n  Ola!")
+    print("  These are the positions you could pick")
+    show_grid(how_to_grid_data)
 
 
-def mode(status):
+def mode_check(status):
     if status == 1:
         pass
     else:
         print("Human Vs. Computer update will come in the next patch. Pls wait till then.")
 
 
+empty_grid_data = np.repeat("⬛", 9).reshape(3, 3)
+grid = make_grid(empty_grid_data)
+
+
+
+# show_grid(np.repeat("⬛", 9).reshape(3, 3))
+2
+
 # how_to_play()
 
-print(s)
+
+def play_game():
+    intro()
+    mode = int(input("\nChoose a mode to play:\n  For Human Vs. Human, enter 1\n  For Human Vs. Computer, enter 2\n  :"))
+    mode_check(mode)
+
+play_game()
