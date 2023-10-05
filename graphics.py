@@ -14,24 +14,7 @@ art = """
 """
 
 
-grid = """
-  ❕   ❕  
-➖➕➖➕➖
-  ❕   ❕  
-➖➕➖➕➖
-  ❕   ❕   
-"""
-
-
-# grid = f"""
-#  {grid_data[0][0]}❕{grid_data[0][1]}❕{grid_data[0][2]}
-#  ➖➕➖➕➖
-#  {grid_data[1][0]}❕{grid_data[1][1]}❕{grid_data[1][2]}
-#  ➖➕➖➕➖
-#  {grid_data[2][0]}❕{grid_data[2][1]}❕{grid_data[2][2]}
-# """
-
-grid_original = """
+original_grid = """
  ⭕❕⭕❕⭕
  ➖➕➖➕➖
  ⭕❕❌❕⭕
@@ -39,8 +22,7 @@ grid_original = """
  ❌❕❌❕⭕ 
 """
 
-move_x = "❌"
-move_o = "⭕"
+moves = ["❌", "⭕"]
 
 how_to_grid_data = np.array([["1️⃣", "2️⃣", "3️⃣"],
                              ["4️⃣", "5️⃣", "6️⃣"],
